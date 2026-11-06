@@ -1,0 +1,38 @@
+{
+  "name": "AutoGestor AI 5.0",
+  "description": "Plataforma multilenguaje, biblioteca de scripts, diseñador gráfico de workflows y governor eco-inteligente.",
+  "homepage": "https://pinokio.computer",
+  "platforms": {
+    "darwin": {
+      "version": "3.10",
+      "commands": [
+        "brew install graphviz ffmpeg",
+        "python -m pip install -r requirements.txt",
+        "mkdir library_scripts 2>/dev/null; streamlit run app.py"
+      ],
+      "path": { "type": "file", "path": "app.py" },
+      "kill": ["streamlit"]
+    },
+    "linux": {
+      "version": "3.10",
+      "commands": [
+        "apt update && apt install -y graphviz ffmpeg",
+        "python -m pip install -r requirements.txt",
+        "mkdir library_scripts 2>/dev/null; streamlit run app.py"
+      ],
+      "path": { "type": "file", "path": "app.py" },
+      "kill": ["streamlit"]
+    },
+    "win32": {
+      "version": "3.10",
+      "commands": [
+        "winget install graphviz",
+        "winget install ffmpeg",
+        "python -m pip install -r requirements.txt",
+        "if not exist library_scripts mkdir library_scripts; streamlit run app.py"
+      ],
+      "path": { "type": "file", "path": "app.py" },
+      "kill": ["streamlit"]
+    }
+  }
+}
